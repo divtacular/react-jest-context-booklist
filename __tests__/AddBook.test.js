@@ -24,6 +24,10 @@ const setup = (props = {}, state = null) => {
 }
 
 test('runs without error', () => {
+
+    const mockUseContext = jest.fn().mockReturnValue(jest.fn());
+    React.useContext = mockUseContext;
+
     const wrapper = setup();
     const component = findByTestAttr(wrapper, 'component-add-book');
     expect(component.exists()).toBe(true);
@@ -31,14 +35,21 @@ test('runs without error', () => {
 
 describe("state controlled input field", () => {
     let mockSetBookEntryState = jest.fn();
+    let mockUseContext = jest.fn();
     let wrapper;
 
     beforeEach(() => {
         mockSetBookEntryState.mockClear();
+        mockUseContext.mockClear();
+
         //Replace React useState with a mock jest function
         React.useState = jest.fn(() => {
             return ['', mockSetBookEntryState]
         });
+        React.useContext = jest.fn(() => {
+            return mockUseContext
+        });
+
         wrapper = setup({});
     });
 
@@ -72,7 +83,6 @@ describe("state controlled input field", () => {
         });
 
         expect(mockSetBookEntryState).toHaveBeenCalledWith({title: '', author: ''});
-        expect(inputBoxTitle.text().length).toBe(0);
     })
 });
 

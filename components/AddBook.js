@@ -1,33 +1,36 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Button, Col, Form, Row} from 'react-bootstrap';
 
-import ReadingListContextProvider from "../contexts/contextReadingList";
+import {ReadingListContext} from "../contexts/contextReadingList";
 
 const AddBook = (props) => {
-    //const book = useContext(ReadingListContextProvider);
+    //Global state manage book list
+    const {addBook} = React.useContext(ReadingListContext);
 
+    //Local state manage form values
     const [formValues, setFormValues] = React.useState({
         title: '',
         author: ''
     });
 
-    const handleChange = (({target}) => {
+    const handleChange = ({target}) => {
         setFormValues({
             ...formValues,
             [target.id]: target.value
         })
-    });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const {title, author} = formValues;
 
-        //TODO: Set BooksList state
+        addBook(title, author);
 
         setFormValues({
             title: '',
             author: ''
         });
-    }
+    };
 
     return (
         <Row data-test={"component-add-book"} className="justify-content-md-center">
@@ -40,6 +43,7 @@ const AddBook = (props) => {
                                 <Form.Control type="text"
                                               data-test={"input-box-title"}
                                               placeholder="Enter title"
+                                              value={formValues.title}
                                               onChange={handleChange} />
                             </Form.Group>
                         </Col>
@@ -50,6 +54,7 @@ const AddBook = (props) => {
                                 <Form.Control type="text"
                                               data-test={"input-box-author"}
                                               placeholder="Enter author"
+                                              value={formValues.author}
                                               onChange={handleChange} />
                             </Form.Group>
                         </Col>

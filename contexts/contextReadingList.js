@@ -8,7 +8,7 @@ const ReadingListContextProvider = (props) => {
     const [books, setBooks] = useState([]);
 
     const addBook = (title, author) => {
-        console.log('addBook');
+        console.log('addBook', title, author);
     }
 
     const removeBook = (removeID) => {

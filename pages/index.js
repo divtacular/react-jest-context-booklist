@@ -4,6 +4,8 @@ import "../scss/styles.scss"
 import Header from "../components/Header";
 import AddBookForm from "../components/AddBook";
 
+import ReadingListContextProvider from "../contexts/contextReadingList";
+
 export default function Home() {
     return (
         <div className="container">
@@ -16,9 +18,10 @@ export default function Home() {
             </Head>
             <main className={"container"}>
                 <React.StrictMode>
-                    <Header count={0}/>
-
-                    <AddBookForm />
+                    <ReadingListContextProvider>
+                        <Header count={0}/>
+                        <AddBookForm/>
+                    </ReadingListContextProvider>
                 </React.StrictMode>
             </main>
         </div>
