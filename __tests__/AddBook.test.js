@@ -25,62 +25,56 @@ const setup = (props = {}, state = null) => {
 
 test('runs without error', () => {
     const wrapper = setup();
-    const component = findByTestAttr(wrapper, 'addbook-component');
+    const component = findByTestAttr(wrapper, 'component-add-book');
     expect(component.exists()).toBe(true);
 });
 
 describe("state controlled input field", () => {
-    let mockSetCurrentGuess = jest.fn();
+    let mockSetBookEntryState = jest.fn();
     let wrapper;
 
     beforeEach(() => {
-        mockSetCurrentGuess.mockClear();
+        mockSetBookEntryState.mockClear();
         //Replace React useState with a mock jest function
         React.useState = jest.fn(() => {
-            return ['', mockSetCurrentGuess]
+            return ['', mockSetBookEntryState]
         });
         wrapper = setup({});
     });
 
     test('state updates title value of input box upon change', () => {
         const inputBox = findByTestAttr(wrapper, 'input-box-author');
+
+        const mockEventFormValues = {
+            id: 'author',
+            value: 'Jim Butcher'
+        }
+
         const mockEvent = {
-            target: {
-                value: 'Jim Butcher'
-            }
+            target: {...mockEventFormValues}
         };
 
         //Simulate input into box
         inputBox.simulate("change", mockEvent);
-        expect(mockSetCurrentGuess).toHaveBeenCalledWith('Jim Butcher');
-    });
-
-    test('state updates title value of input box upon change', () => {
-        const inputBox = findByTestAttr(wrapper, 'input-box-title');
-        const mockEvent = {
-            target: {
-                value: 'Storm Front'
-            }
-        };
-
-        //Simulate input into box
-        inputBox.simulate("change", mockEvent);
-        expect(mockSetCurrentGuess).toHaveBeenCalledWith('Storm Front');
+        //State handler transforms before calling setState
+        expect(mockSetBookEntryState).toHaveBeenCalledWith({[mockEventFormValues.id]: mockEventFormValues.value});
     });
 
     //Test setCurrentGuess was called with a value of "". We infer that the input would be emptied. I will add a check too
-    // test("clear guess on submit", () => {
-    //     const inputBox = findByTestAttr(wrapper, 'input-box');
-    //     const submitBtn = findByTestAttr(wrapper, 'submit-button');
-    //
-    //     //Simulate input into box
-    //     submitBtn.simulate("click", {
-    //         preventDefault: () => {
-    //         }
-    //     });
-    //
-    //     expect(mockSetCurrentGuess).toHaveBeenCalledWith('');
-    //     expect(inputBox.text().length).toBe(0);
-    // })
+    test("clear fields on submit", () => {
+        const inputBoxTitle = findByTestAttr(wrapper, 'input-box-title');
+        const submitBtn = findByTestAttr(wrapper, 'submit-button');
+
+        //Simulate input into box
+        submitBtn.simulate("click", {
+            preventDefault: () => {
+            }
+        });
+
+        expect(mockSetBookEntryState).toHaveBeenCalledWith({title: '', author: ''});
+        expect(inputBoxTitle.text().length).toBe(0);
+    })
 });
+
+//TODO: test integration w/Book list ... setFields to be called?
 
