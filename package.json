@@ -12,12 +12,16 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.5.0",
     "next": "9.4.2",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.2.3",
     "@babel/core": "^7.4.0",
     "babel-jest": "^24.5.0",
     "check-prop-types": "^1.1.2",

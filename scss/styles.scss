@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 :root {
   --themePrimary: #DFBA2D;
   --themeSecondary: #7E90A6;
@@ -14,4 +16,9 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Permanent Marker', cursive;
+}
+
+button[type="submit"] {
+  background: var(--themeSecondary);
+  color: #fff;
 }
