@@ -1,21 +1,27 @@
-import { shallow } from "enzyme";
+import {shallow} from "enzyme";
 import React from "react";
 import renderer from "react-test-renderer";
+import {findByTestAttr} from "../testUtils";
 
 import App from "../pages/index.js";
 
-describe("With Enzyme", () => {
-    it('App shows "Hello, Sunshine!"', () => {
-        const app = shallow(<App />);
+/**
+ * Factory function to create ShallowWrapper for the App component
+ * @function setup
+ * @param {object} props - Component props for this setup
+ * @param {object} state - Initial state
+ * @returns {ShallowWrapper}
+ */
+const setup = (props = {}, state = null) => {
+    const setupProps = {...props};
+    const wrapper = shallow(<App {...setupProps} />);
 
-        expect(app.find("h1").text()).toEqual("Todo App");
-    });
-});
+    if (state) {
+        wrapper.setState(state);
+    }
+    return wrapper;
+}
 
-describe("With Snapshot Testing", () => {
-    it('App shows "Hello, Sunshine!"', () => {
-        const component = renderer.create(<App />);
-        const tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+test('runs withour error', () => {
+    const wrapper = setup();
 });

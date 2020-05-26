@@ -1,4 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import "../scss/styles.scss"
+
+import Header from "../components/Header";
+import AddBook from "../components/AddBook";
 
 export default function Home() {
     return (
@@ -7,21 +11,18 @@ export default function Home() {
                 <title>Create Next App</title>
                 <link rel="icon" href="/favicon.ico"/>
 
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
                 <link rel="stylesheet"
-                      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+                      href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker"/>
 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
 
             <main className={"container"}>
-                <h1>Todo App</h1>
-                <p>You have XXX todos</p>
-
-
-
-
+                <React.StrictMode>
+                    <Header count={0}/>
+                    <AddBook />
+                </React.StrictMode>
             </main>
 
             <footer>
