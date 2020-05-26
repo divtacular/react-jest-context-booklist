@@ -47,7 +47,7 @@ describe("state controlled input field", () => {
             return ['', mockSetBookEntryState]
         });
         React.useContext = jest.fn(() => {
-            return mockUseContext
+            return {addBook: mockUseContext}
         });
 
         wrapper = setup({});
