@@ -1,13 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import {Button, Col, Form, Row} from 'react-bootstrap';
 
 import {ReadingListContext} from "../contexts/contextReadingList";
 
-const AddBook = (props) => {
-    //Global state manage book list
+const AddBook = () => {
     const {addBook} = React.useContext(ReadingListContext);
-
-    //Local state manage form values
     const [formValues, setFormValues] = React.useState({
         title: '',
         author: ''
@@ -24,16 +21,19 @@ const AddBook = (props) => {
         e.preventDefault();
         const {title, author} = formValues;
 
-        addBook(title, author);
-
-        setFormValues({
-            title: '',
-            author: ''
-        });
+            addBook(title, author);
+            setFormValues({
+                title: '',
+                author: ''
+            });
     };
 
     return (
-        <Form data-test={"component-add-book"} className="justify-content-md-center">
+        <Form
+            data-test={"component-add-book"}
+            className="justify-content-md-center"
+            onSubmit={handleSubmit}
+        >
             <Row>
                 <Col>
                     <Form.Group controlId="title">
@@ -44,6 +44,7 @@ const AddBook = (props) => {
                             placeholder="Enter title"
                             value={formValues.title}
                             onChange={handleChange}
+                            required
                         />
                     </Form.Group>
                 </Col>
@@ -57,6 +58,7 @@ const AddBook = (props) => {
                             placeholder="Enter author"
                             value={formValues.author}
                             onChange={handleChange}
+                            required
                         />
                     </Form.Group>
                 </Col>
@@ -67,7 +69,6 @@ const AddBook = (props) => {
                             className={"float-right"}
                             data-test={"submit-button"}
                             type="submit"
-                            onClick={handleSubmit}
                     >
                         add to list
                     </Button>

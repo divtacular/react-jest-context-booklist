@@ -71,19 +71,16 @@ describe("state controlled input field", () => {
         expect(mockSetBookEntryState).toHaveBeenCalledWith({[mockEventFormValues.id]: mockEventFormValues.value});
     });
 
-    //Test setCurrentGuess was called with a value of "". We infer that the input would be emptied. I will add a check too
     test("clear fields on submit", () => {
-        const inputBoxTitle = findByTestAttr(wrapper, 'input-box-title');
-        const submitBtn = findByTestAttr(wrapper, 'submit-button');
+        const form = findByTestAttr(wrapper, 'component-add-book');
 
         //Simulate input into box
-        submitBtn.simulate("click", {
-            preventDefault: () => {
-            }
+        form.simulate("submit", {
+            preventDefault: () => {}
         });
 
         expect(mockSetBookEntryState).toHaveBeenCalledWith({title: '', author: ''});
-    })
+    });
 });
 
 //TODO: test integration w/Book list ... setFields to be called?
