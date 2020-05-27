@@ -25,8 +25,9 @@ const ReadingList = () => {
                                         </Col>
                                         <Col>
                                             <Button
-                                                onClick={() => { handleClickRemove(id)}}
                                                 aria-label={"Remove this book from your list"}
+                                                data-test={"delete-button"}
+                                                onClick={() => { handleClickRemove(id)}}
                                             >x</Button>
                                         </Col>
                                     </Row>
