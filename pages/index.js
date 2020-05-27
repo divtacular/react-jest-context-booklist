@@ -20,8 +20,8 @@ export default function Home() {
             <main className={"container"}>
                 <React.StrictMode>
                     <ReadingListContextProvider>
-                        <Header count={0}/>
-                        <ReadingList></ReadingList>
+                        <Header/>
+                        <ReadingList/>
                         <AddBookForm/>
                     </ReadingListContextProvider>
                 </React.StrictMode>

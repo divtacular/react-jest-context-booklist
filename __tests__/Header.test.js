@@ -27,17 +27,18 @@ const setup = (props = {}, state = null) => {
 }
 
 test('runs without error', () => {
+
+    const mockUseContext = jest.fn().mockReturnValue({
+        books: []
+    });
+    React.useContext = mockUseContext;
+
     const wrapper = setup();
     const headerComponent = findByTestAttr(wrapper, 'header-component');
     expect(headerComponent.exists()).toBe(true);
 });
 
-test('runs with expected props', () => {
-    const expectedProps = {
-        count: 1
-    };
-    checkProps(Header, expectedProps);
-});
+
 
 test('displays zero items text', () => {
     const wrapper = setup();
@@ -46,7 +47,17 @@ test('displays zero items text', () => {
 });
 
 test('displays count of items text', () => {
-    const wrapper = setup({count: 1});
+    const mockUseContext = jest.fn().mockReturnValue({
+        books: [
+            {title: 'Storm Front', author: 'Jim Butcher',  id: 1},
+            {title: 'Fool Moon', author: 'Jim Butcher',  id: 2}
+        ]
+    });
+    React.useContext = mockUseContext;
+
+    const wrapper = setup();
     const hasItemsText = findByTestAttr(wrapper, 'has-items');
+
     expect(hasItemsText.exists()).toBe(true);
+    expect(hasItemsText.text()).toBe('Your list has 2 books');
 });

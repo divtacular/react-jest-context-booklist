@@ -1,19 +1,17 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import {ReadingListContext} from "../contexts/contextReadingList";
 
-const Header = ({count}) => {
+const Header = () => {
+    const {books} = React.useContext(ReadingListContext)
+
     return (
         <div className={"text-center"} data-test={"header-component"}>
             <h1 data-test={"title"}>Reading List</h1>
-            { count > 0 ?
-                <p data-test={"has-items"}>Your list has {count} books</p> :
+            { books.length > 0 ?
+                <p data-test={"has-items"}>Your list has {books.length} {books.length > 1 ? 'books': 'book'}</p> :
                 <p data-test={"no-items"}>Your reading list is empty</p> }
         </div>
     );
-};
-
-Header.propTypes = {
-    count: PropTypes.number.isRequired
 };
 
 export default Header;
