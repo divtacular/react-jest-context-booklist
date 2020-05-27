@@ -9,10 +9,17 @@ const ReadingListContextProvider = (props) => {
 
     const addBook = (title, author) => {
         console.log('addBook', title, author);
+
+        const id = uuid();
+
+        setBooks([
+            ...books,
+            {title, author, id}
+        ]);
     }
 
-    const removeBook = (removeID) => {
-        console.log('removeBook');
+    const removeBook = (id) => {
+        setBooks(books.filter(book => book.id !== id));
     }
 
     return (
