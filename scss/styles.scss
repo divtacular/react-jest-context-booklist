@@ -1,10 +1,12 @@
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/_bootstrap";
+
+
 
 :root {
   --themePrimary: #DFBA2D;
   --themeSecondary: #7E90A6;
   --themeTertiary: #091632;
-  --themeContrast: #83722E;
+  --themeContrast: #DF612D;
 }
 
 body {
@@ -19,6 +21,22 @@ h1, h2, h3, h4, h5 {
 }
 
 button[type="submit"] {
-  background: var(--themeSecondary);
+  background: var(--themeContrast);
   color: #fff;
+}
+
+.reading-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    span {
+      display: block;
+
+      &.author {
+        font-style: italic;
+        font-size: 0.8em;
+      }
+    }
+  }
 }
