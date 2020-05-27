@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Header = ({count}) => {
     return (
-        <div className={"center-align"} data-test={"header-component"}>
+        <div className={"text-center"} data-test={"header-component"}>
             <h1 data-test={"title"}>Reading List</h1>
             { count > 0 ?
                 <p data-test={"has-items"}>Your list has {count} books</p> :

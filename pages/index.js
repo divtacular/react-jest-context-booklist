@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import AddBookForm from "../components/AddBook";
 
 import ReadingListContextProvider from "../contexts/contextReadingList";
+import ReadingList from "../components/ReadingList";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <React.StrictMode>
                     <ReadingListContextProvider>
                         <Header count={0}/>
+                        <ReadingList></ReadingList>
                         <AddBookForm/>
                     </ReadingListContextProvider>
                 </React.StrictMode>
