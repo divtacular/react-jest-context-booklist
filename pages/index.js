@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import "../scss/styles.scss"
-
-import Header from "../components/Header";
-import AddBookForm from "../components/AddBook";
 
 import ReadingListContextProvider from "../contexts/contextReadingList";
+import Header from "../components/Header";
+import AddBookForm from "../components/AddBook";
 import ReadingList from "../components/ReadingList";
+
+import "../scss/styles.scss"
 
 export default function Home() {
     return (
