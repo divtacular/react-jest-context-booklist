@@ -20,9 +20,10 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.10.1",
     "@types/enzyme": "^3.10.5",
     "@types/jest": "^25.2.3",
-    "@babel/core": "^7.4.0",
     "babel-jest": "^24.5.0",
     "check-prop-types": "^1.1.2",
     "enzyme": "^3.9.0",

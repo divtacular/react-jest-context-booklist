@@ -1,25 +1,27 @@
-import React, {createContext, useState} from 'react';
-import { v1 as uuid } from 'uuid';
+import React, {createContext} from 'react';
+import {v1 as uuid} from 'uuid';
+
+import reducerReadingList from '../reducers/reducerReadingList';
+import {dispatchFormatter} from '../utils/helpers';
 
 export const ReadingListContext = createContext();
 
 const ReadingListContextProvider = (props) => {
 
-    const [books, setBooks] = useState([]);
+    const [books, dispatch] = React.useReducer(reducerReadingList, []);
 
     const addBook = (title, author) => {
-        console.log('addBook', title, author);
-
         const id = uuid();
-
-        setBooks([
-            ...books,
-            {title, author, id}
-        ]);
+        dispatch(dispatchFormatter('addBook', {
+            id, title, author
+        }));
     }
 
     const removeBook = (id) => {
-        setBooks(books.filter(book => book.id !== id));
+        debugger;
+        dispatch(dispatchFormatter('removeBook', {
+            id
+        }));
     }
 
     return (
