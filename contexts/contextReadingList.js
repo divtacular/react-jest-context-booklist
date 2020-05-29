@@ -18,11 +18,23 @@ const ReadingListContextProvider = (props) => {
     }
 
     const removeBook = (id) => {
-        debugger;
         dispatch(dispatchFormatter('removeBook', {
             id
         }));
     }
+
+    //Load storage on mount, Next JS SSR has no localstorage
+    React.useEffect(() => {
+        const sessionBooks = JSON.parse(localStorage.getItem("booksList"));
+        if(sessionBooks) {
+            dispatch(dispatchFormatter('setBooks', sessionBooks));
+        }
+    }, [])
+
+    React.useEffect(() => {
+        localStorage.setItem("booksList", JSON.stringify(books));
+    }, [books]);
+
 
     return (
         <ReadingListContext.Provider value={{books, addBook, removeBook}}>
