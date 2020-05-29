@@ -5,10 +5,6 @@ import {ReadingListContext} from "../contexts/contextReadingList";
 const ReadingList = () => {
     const {books, removeBook} = React.useContext(ReadingListContext);
 
-    const handleClickRemove = (id) => {
-        removeBook(id);
-    }
-
     return (
         <Row data-test={"component-reading-list"}>
             <Col>
@@ -17,7 +13,7 @@ const ReadingList = () => {
                             return (
                                 <li key={id} data-test={"book"}>
                                     <Row>
-                                        <Col md={11}>
+                                        <Col sm={11}>
                                             <p>
                                                 <span className={"title"}>{title}</span>
                                                 <span className={"author"}>{author}</span>
@@ -27,7 +23,9 @@ const ReadingList = () => {
                                             <Button
                                                 aria-label={"Remove this book from your list"}
                                                 data-test={"delete-button"}
-                                                onClick={() => { handleClickRemove(id)}}
+                                                onClick={() => {
+                                                    removeBook(id)
+                                                }}
                                             >x</Button>
                                         </Col>
                                     </Row>
