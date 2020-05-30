@@ -38,8 +38,6 @@ test('runs without error', () => {
     expect(headerComponent.exists()).toBe(true);
 });
 
-
-
 test('displays zero items text', () => {
     const wrapper = setup();
     const noItemsText = findByTestAttr(wrapper, 'no-items');
