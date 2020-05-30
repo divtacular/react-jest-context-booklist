@@ -1,12 +1,13 @@
 @import "bootstrap/_bootstrap";
 
 
-
 :root {
   --themePrimary: #DFBA2D;
   --themeSecondary: #7E90A6;
   --themeTertiary: #091632;
   --themeContrast: #DF612D;
+
+  --themePositive: #77df2d;
 }
 
 body {
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5 {
 }
 
 button[type="submit"] {
-  background: var(--themeContrast);
+  background: var(--themePositive);
   color: #fff;
 }
 
@@ -29,14 +30,45 @@ button[type="submit"] {
   list-style: none;
   padding-left: 0;
 
-  li {
-    span {
-      display: block;
+  span {
+    display: block;
+    vertical-align: middle;
 
-      &.author {
-        font-style: italic;
-        font-size: 0.8em;
+    &.author {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  }
+
+  .actions {
+    float: right;
+  }
+
+  button {
+    margin-right: 5px;
+    border-radius: 50px;
+    background: none;
+
+    span {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
       }
+    }
+
+    .save {
+      color: var(--themePositive);
+    }
+
+    .cancel,
+    .edit {
+      color: var(--themePrimary);
+    }
+
+    .remove {
+      color: var(--themeContrast);
     }
   }
 }

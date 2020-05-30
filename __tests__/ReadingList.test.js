@@ -46,14 +46,19 @@ describe('there are no books in the list', () => {
 describe('there are books in the list', () => {
     let wrapper;
     let removeBook = jest.fn();
+    const mockSetIsEditing = jest.fn();
 
     const books = [
-        {title: 'Fool Moon', author: 'Jim Butcher', id: 1},
-        {title: 'Storm Front', author: 'Jim Butcher', id: 2},
-        {title: 'Death Masks', author: 'Jim Butcher', id: 3}
+        {title: 'Fool Moon', author: 'Jim Butcher', id: '1'},
+        {title: 'Storm Front', author: 'Jim Butcher', id: '2'},
+        {title: 'Death Masks', author: 'Jim Butcher', id: '3'}
     ];
 
     beforeEach(() => {
+        mockSetIsEditing.mockClear();
+        React.useState = jest.fn(() => {
+            return ['', mockSetIsEditing]
+        });
         wrapper = setup(books, removeBook);
     })
 
@@ -63,10 +68,16 @@ describe('there are books in the list', () => {
     });
 
     test('book is removed from the list', () => {
-        let booksList = findByTestAttr(wrapper, 'book');
+        const booksList = findByTestAttr(wrapper, 'book');
         const deleteButton = findByTestAttr(booksList, 'delete-button').at(0);
         deleteButton.simulate("click");
 
         expect(removeBook).toHaveBeenCalled();
+    });
+
+    test('edit button triggers edit of book', () => {
+        const editButton = findByTestAttr(wrapper, 'edit-button').at(0);
+        editButton.simulate('click');
+        expect(mockSetIsEditing).toHaveBeenCalledWith('1');
     });
 });

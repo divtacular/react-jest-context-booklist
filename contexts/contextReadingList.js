@@ -15,13 +15,17 @@ const ReadingListContextProvider = (props) => {
         dispatch(dispatchFormatter('addBook', {
             id, title, author
         }));
+    };
+
+    const updateBook = (book) => {
+        dispatch(dispatchFormatter('updateBook', book));
     }
 
     const removeBook = (id) => {
         dispatch(dispatchFormatter('removeBook', {
             id
         }));
-    }
+    };
 
     //Load storage on mount, Next JS SSR has no localstorage
     React.useEffect(() => {
@@ -29,15 +33,14 @@ const ReadingListContextProvider = (props) => {
         if(sessionBooks) {
             dispatch(dispatchFormatter('setBooks', sessionBooks));
         }
-    }, [])
+    }, []);
 
     React.useEffect(() => {
         localStorage.setItem("booksList", JSON.stringify(books));
     }, [books]);
 
-
     return (
-        <ReadingListContext.Provider value={{books, addBook, removeBook}}>
+        <ReadingListContext.Provider value={{books, addBook, removeBook, updateBook}}>
             {props.children}
         </ReadingListContext.Provider>
     );
