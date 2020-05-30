@@ -1,0 +1,74 @@
+@import "bootstrap/_bootstrap";
+
+
+:root {
+  --themePrimary: #DFBA2D;
+  --themeSecondary: #7E90A6;
+  --themeTertiary: #091632;
+  --themeContrast: #DF612D;
+
+  --themePositive: #77df2d;
+}
+
+body {
+  background: var(--themeTertiary);
+  color: var(--themePrimary);
+  font-family: 'Overpass', sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+button[type="submit"] {
+  background: var(--themePositive);
+  color: #fff;
+}
+
+.reading-list {
+  list-style: none;
+  padding-left: 0;
+
+  span {
+    display: block;
+    vertical-align: middle;
+
+    &.author {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  }
+
+  .actions {
+    float: right;
+  }
+
+  button {
+    margin-right: 5px;
+    border-radius: 50px;
+    background: none;
+
+    span {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .save {
+      color: var(--themePositive);
+    }
+
+    .cancel,
+    .edit {
+      color: var(--themePrimary);
+    }
+
+    .remove {
+      color: var(--themeContrast);
+    }
+  }
+}
