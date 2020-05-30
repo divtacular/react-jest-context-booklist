@@ -76,16 +76,8 @@ describe('there are books in the list', () => {
     });
 
     test('edit button triggers edit of book', () => {
-
         const editButton = findByTestAttr(wrapper, 'edit-button').at(0);
-
         editButton.simulate('click');
-
         expect(mockSetIsEditing).toHaveBeenCalledWith('1');
     });
-    //
-    // test('undo edit button triggers cancel of edit', () => {
-    //
-    // });
-
 });

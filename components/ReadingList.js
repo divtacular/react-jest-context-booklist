@@ -7,12 +7,12 @@ import {ReadingListContext} from "../contexts/contextReadingList";
 import EditBook from "./EditBook";
 
 const ReadingList = () => {
-    const {books, removeBook} = React.useContext(ReadingListContext);
+    const {books, removeBook, updateBook} = React.useContext(ReadingListContext);
 
     const [isEditing, setIsEditing] = React.useState('');
 
     const toggleIsEditing = (id = false) => {
-        setIsEditing(isEditing === id ? false : id);
+        setIsEditing(isEditing === id ? '' : id);
     }
 
     return (
@@ -22,33 +22,23 @@ const ReadingList = () => {
                     {books.length ? books.map(({title, author, id}) => {
                             return (
                                 <li key={id} data-test={"book"}>
-                                    <Row>
-                                        <Col sm={9}>
-                                            {isEditing === id ?
-                                                <EditBook isEditing={isEditing === id} book={{title, author, id}}/> :
-
-                                                <p className={isEditing ? 'hidden' : ''}>
+                                    {isEditing === id ?
+                                        <EditBook
+                                            setIsEditing={setIsEditing}
+                                            updateBook={updateBook}
+                                            book={
+                                                {title, author, id}
+                                            }
+                                        /> :
+                                        <Row>
+                                            <Col sm={9}>
+                                                <p>
                                                     <span className={"title"}>{title}</span>
                                                     <span className={"author"}>{author}</span>
                                                 </p>
-                                            }
-                                        </Col>
-                                        <Col>
-                                            <div className={"actions"}>
-                                                {isEditing === id ?
-                                                    <Button
-                                                        size={'sm'}
-                                                        variant={''}
-                                                        aria-label={"save changes"}
-                                                        data-test={"save-button"}
-                                                        onClick={() => {
-
-                                                        }}
-                                                    >
-                                                    <span className={"save"}>
-                                                        <FontAwesomeIcon icon={faCheck}/>
-                                                    </span>
-                                                    </Button> :
+                                            </Col>
+                                            <Col>
+                                                <div className={"actions"}>
                                                     <Button
                                                         size={'sm'}
                                                         variant={''}
@@ -56,28 +46,11 @@ const ReadingList = () => {
                                                         data-test={"edit-button"}
                                                         onClick={() => {
                                                             toggleIsEditing(id)
-                                                        }}
-                                                    >
-                                                    <span className={"edit"}>
-                                                        <FontAwesomeIcon icon={faPencilAlt}/>
-                                                    </span>
+                                                        }}>
+                                                        <span className={"edit"}>
+                                                            <FontAwesomeIcon icon={faPencilAlt}/>
+                                                        </span>
                                                     </Button>
-                                                }
-
-                                                {isEditing === id ?
-                                                    <Button
-                                                        size={'sm'}
-                                                        variant={''}
-                                                        aria-label={"Cancel editing"}
-                                                        data-test={"cancel-edit-button"}
-                                                        onClick={() => {
-                                                            toggleIsEditing(id)
-                                                        }}
-                                                    >
-                                                    <span className={"cancel"}>
-                                                        <FontAwesomeIcon icon={faUndo}/>
-                                                    </span>
-                                                    </Button> :
                                                     <Button
                                                         size={'sm'}
                                                         variant={''}
@@ -85,16 +58,15 @@ const ReadingList = () => {
                                                         data-test={"delete-button"}
                                                         onClick={() => {
                                                             removeBook(id)
-                                                        }}
-                                                    >
-                                                    <span className={"remove"}>
-                                                        <FontAwesomeIcon icon={faMinusSquare}/>
-                                                    </span>
+                                                        }}>
+                                                        <span className={"remove"}>
+                                                            <FontAwesomeIcon icon={faMinusSquare}/>
+                                                        </span>
                                                     </Button>
-                                                }
-                                            </div>
-                                        </Col>
-                                    </Row>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    }
                                 </li>
                             )
                         }
