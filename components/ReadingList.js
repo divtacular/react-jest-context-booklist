@@ -31,7 +31,7 @@ const ReadingList = () => {
                                             }
                                         /> :
                                         <Row>
-                                            <Col sm={9}>
+                                            <Col xs={8} sm={9}>
                                                 <p>
                                                     <span className={"title"}>{title}</span>
                                                     <span className={"author"}>{author}</span>

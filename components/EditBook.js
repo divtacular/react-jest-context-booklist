@@ -33,14 +33,14 @@ const EditBook = ({setIsEditing, book, updateBook}) => {
     };
 
     return (
-        <div data-test={"component-edit-book"}>
+        <div className={"edit-form"} data-test={"component-edit-book"}>
             <Form
                 data-test={"editing-form"}
                 className="justify-content-md-center"
                 onSubmit={handleSubmit}
             >
                 <Row>
-                    <Col sm={9}>
+                    <Col xs={8} sm={9}>
                         <Row>
                             <Col>
                                 <Form.Group controlId="title">

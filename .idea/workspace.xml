@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24db3aa2-0916-456d-8169-6c7d6c874b2e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cRNLDXtVeGpWjI0bCD0YDplIFE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\David\webstormProjects\todo\__tests__" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\David\webstormProjects\todo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="runs with expected props" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/Header.test.js" />
+      <test-names>
+        <test-name value="runs with expected props" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.runs with expected props" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24db3aa2-0916-456d-8169-6c7d6c874b2e" name="Default Changelist" comment="" />
+      <created>1590487387680</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590487387680</updated>
+      <workItem from="1590487389471" duration="34537000" />
+      <workItem from="1590573683890" duration="33943000" />
+      <workItem from="1590696781137" duration="47644000" />
+      <workItem from="1590848969401" duration="17568000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="642" y="359" key="#Notifications" timestamp="1590574096018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="642" y="359" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1590574096018" />
+    <state x="504" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590763184925">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="504" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590763184925" />
+    <state width="1447" height="277" key="GridCell.Tab.0.bottom" timestamp="1590696472837">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1447" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590696472837" />
+    <state width="1447" height="277" key="GridCell.Tab.0.center" timestamp="1590696472837">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1447" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590696472837" />
+    <state width="1447" height="277" key="GridCell.Tab.0.left" timestamp="1590696472837">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1447" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590696472837" />
+    <state width="1447" height="277" key="GridCell.Tab.0.right" timestamp="1590696472837">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1447" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590696472837" />
+    <state x="270" y="168" key="SettingsEditor" timestamp="1590853805335">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="270" y="168" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590853805335" />
+    <state x="93" y="100" width="1285" height="847" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590856074206">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="93" y="100" width="1285" height="847" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590856074206" />
+    <state x="544" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590849924960">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="544" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590849924960" />
+    <state x="341" y="84" width="929" height="849" key="find.popup" timestamp="1590793888104">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="341" y="84" width="929" height="849" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590793888104" />
+    <state x="422" y="246" key="run.anything.popup" timestamp="1590842201193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="422" y="246" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590842201193" />
+    <state x="418" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1590869311038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="418" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590869311038" />
+  </component>
+</project>
